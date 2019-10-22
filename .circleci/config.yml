@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build-and-deploy-tag:
+    docker:
+      - image: node
+    steps:
+      - checkout
+      - run:
+          name: Publish with new version
+          command: yarn publish --new-version ${CIRCLE_TAG} --no-progress --non-interactive
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build-and-deploy-tag:
+          context: refactor-zone-npm
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /([0-9]+\.[0-9]+|[0-9]+\.[0-9]+\.[0-9]+)(|-(alpha|beta|PR)[0-9]+)/

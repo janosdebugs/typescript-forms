@@ -1,0 +1,27 @@
+{
+  "name": "@refactorzone/form",
+  "description": "Form abstractions for Typescript",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "prepublish": "tsc",
+  "dependencies": {
+    "punycode": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/punycode": "^2.1.0",
+    "typescript": "~3.5.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
